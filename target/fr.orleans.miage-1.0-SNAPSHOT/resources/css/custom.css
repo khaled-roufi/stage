@@ -1,0 +1,206 @@
+body {
+
+    background: url("../img/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.page {
+
+    font-family: "Century Gothic";
+    font-size: 18px;
+}
+.page .top{
+    margin-top: 130px;
+}
+.page #header .header {
+    height: 100px;
+    font-size: xx-large;
+    color: #564446;
+}
+.page #header .header .logo {
+    width:  80%;
+    height: 100px;
+    margin-left: -25px;
+}
+.page #header .header .applicationName {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.page #header .titleAction {
+    font-size: x-large;
+    padding-top: 15px;
+
+}
+@media (max-width: 960px) {
+    .page #header .titleAction {
+        font-size: large;
+        padding-top: 15px;
+    }
+}
+.page #navigation .navbar {
+    background: #0c0c0c;
+    color: white;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: none;
+    margin-bottom: 10px;
+}
+.page #navigation .navbar .navbar-nav {
+    margin: 0;
+}
+.page #navigation .navbar .navbar-nav a ,
+.page #navigation .navbar .navbar-nav a:hover{
+    color: white;
+}
+.page #navigation .navbar .navbar-nav li,
+.page #navigation .navbar .navbar-nav li:hover,
+.page #navigation .navbar .navbar-nav li:active,
+.page #navigation .navbar .navbar-nav li:focus,
+.page #navigation .navbar .navbar-nav ul.dropdown-menu {
+    background: #0c0c0c;
+    color: white;
+}
+.page #navigation .navbar .navbar-nav li > a:hover,
+.page #navigation .navbar .navbar-nav li > a:focus,
+.page #navigation .navbar .navbar-nav li.active > a
+.page #navigation .navbar .navbar-nav li.dropdown.open > a {
+    background: #0c0c0c;
+    color: white;
+}
+.page #navigation .navbar .navbar-right {
+    margin-right: 0;
+}
+.page #navigation .navbar-collapse {
+    padding: 0;
+}
+.page #navigation .navbar-toggle .icon-bar {
+    background-color: lightgrey;
+}
+.page #navigation .navbar-toggle {
+    border-color: lightgrey;
+}
+/**-----------------------------------------------ACCUEIL------------------------------------------------------------*/
+
+.page #accueil .actionText {
+    color: black;
+    font-size: 41px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.page #accueil .actionImage{
+    width: 80%;
+}
+
+
+
+.page #accueil .div-actions {
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.page #accueil .div-actions a:focus,
+.page #accueil .div-actions a:hover {
+  text-decoration: none;
+}
+.page #accueil .div-actions:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.page #accueil .actions {
+  padding-top: 20px;
+}
+
+/***--------------------------------CSS CONNEXION-------------------------------***/
+.page #insciption .inscription,
+.page #connexion .connexion {
+   color: black;
+}
+.page #insciption .inscription .fieldset ,
+.page #connexion .connexion .fieldset{
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: 2px solid #0c0c0c;
+}
+
+.page #insciption .inscription legend ,
+.page #connexion .connexion legend {
+    color: #525150;
+    display: block;
+    width: auto;
+    font-size: x-large;
+    font-weight: bold !important;
+    border-bottom: 0;
+    margin: 0 10px 10px 10px;
+    padding: 0 5px;
+}
+
+
+
+.page #insciption .inscription #inscriptionForm label,
+.page #connexion .connexion #connexionForm label{
+    margin-bottom: 10px;
+}
+.page #insciption .inscription #inscriptionForm .btn,
+.page #connexion .connexion #connexionForm .btn{
+    background: #0c0c0c;
+    color: white;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    font-size: 21px;
+}
+
+
+/***--------------------------------CSS Panier------------------------------***/
+.page #panier #panierTable .imgProduit{
+    width: 100%;
+}
+.page #panier #panierTable .blocInfo {
+    margin-left: 81px;
+}
+.page #panier #panierTable .titreProduit{
+    font-size: x-large;
+    font-weight: 700;
+    text-align: left;
+}
+.page #panier #panierTable .descriptionProduit{
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 500;
+
+}
+.page #panier #panierTable .prixProduit{
+    font-size: x-large;
+    font-weight: 700;
+    text-align: center;
+    color: #b12704!important;
+
+ }
+.page #panier #panierTable .quantiteProduit{
+    margin-top: 34px;
+}
+.page #panier #panierTable .quantiteProduitAcion{
+    margin-top: 34px;
+    margin-left: 37px;
+}
+.page #panier #panierTable .actionProduit{
+    margin-top: 34px;
+}
+.page #panier #panierTable .total{
+    font-size: x-large;
+    font-weight: 700;
+    text-align: center;
+    color: #b12704!important;
+}

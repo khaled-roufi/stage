@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.multipart.saveDir" value="location of your choice" />
+
+
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index"/>
+
+        <action name="index" class="mesActions.Accueil">
+            <result>/WEB-INF/views/Index.jsp</result>
+        </action>
+
+
+        <action name="conceptioncuisine" class="mesActions.PreConception">
+            <result>/WEB-INF/views/PreConception.jsp</result>
+        </action>
+
+        <action name="cuisineavecpoinier" class="mesActions.CuisineAvecPoinier">
+            <result>/WEB-INF/views/CuisineAvecPoinier.jsp</result>
+        </action>
+
+        <action name="cuisinesanspoinier" class="mesActions.CuisineSansPoinier">
+            <result>/WEB-INF/views/CuisineSansPoinier.jsp</result>
+        </action>
+
+
+        <action name="inscrire" class="mesActions.Inscription">
+            <result>/WEB-INF/views/FormRegister.jsp</result>
+        </action>
+
+        <action name="preconnexion" class="mesActions.PreConnexion">
+            <result>/WEB-INF/views/Connexion.jsp</result>
+        </action>
+
+
+
+        <action name="connexion" class="mesActions.Connexion">
+            <result name="success">/WEB-INF/views/Profile.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validerregistr" class="mesActions.Register">
+            <result name="success">/WEB-INF/views/RegistrationOk.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validercuisine" class="mesActions.ValiderCuisine">
+            <result name="success">/WEB-INF/views/RegistrationCuisineOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+
+        <action name="validerchambre" class="mesActions.ValiderChambre">
+            <result name="success">/WEB-INF/views/RegistrationChambreOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validerlit" class="mesActions.ValiderProduit">
+            <result name="success">/WEB-INF/views/RegistrationProductOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validerchevet" class="mesActions.ValiderProduit">
+            <result name="success">/WEB-INF/views/RegistrationProductOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validercommode" class="mesActions.ValiderProduit">
+            <result name="success">/WEB-INF/views/RegistrationProductOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validermiroir" class="mesActions.ValiderProduit">
+            <result name="success">/WEB-INF/views/RegistrationProductOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validercoiffeuse" class="mesActions.ValiderProduit">
+            <result name="success">/WEB-INF/views/RegistrationProductOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validerarmoire" class="mesActions.ValiderProduit">
+            <result name="success">/WEB-INF/views/RegistrationProductOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validerpouffe" class="mesActions.ValiderProduit">
+            <result name="success">/WEB-INF/views/RegistrationProductOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="addproduct" class="mesActions.AjouterProduit">
+            <result>/WEB-INF/views/AjouterProduit.jsp</result>
+        </action>
+
+        <action name="deleteproduct" class="mesActions.SupprimerProduit">
+            <result>/WEB-INF/views/SupprimerProduit.jsp</result>
+        </action>
+
+        <action name="modifyproduct" class="mesActions.RediModifyProduct">
+            <result>/WEB-INF/views/RediModifyProduct.jsp</result>
+        </action>
+
+        <action name="modifycuisine" class="mesActions.ListeModifyCuisine">
+            <result>/WEB-INF/views/ListeModifyCuisine.jsp</result>
+        </action>
+
+        <action name="formcuisinemodify" class="mesActions.FormCuisineModify">
+            <result>/WEB-INF/views/FormCuisineModify.jsp</result>
+        </action>
+
+        <action name="addcuisine" class="mesActions.AjoutProduct">
+            <result>/WEB-INF/views/FormCuisine.jsp</result>
+        </action>
+
+        <action name="addchambre" class="mesActions.AjoutProduct">
+            <result>/WEB-INF/views/FormChambre.jsp</result>
+        </action>
+
+        <action name="deletecuisine" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/DeleteNosProduits.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="deletelit" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/DeleteNosProduits.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="deletearmoire" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/DeleteNosProduits.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="deletechevet" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/DeleteNosProduits.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="deletecommode" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/DeleteNosProduits.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="deletemiroir" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/DeleteNosProduits.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="deletecoiffeuse" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/DeleteNosProduits.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="deletepouffe" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/DeleteNosProduits.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="modifiercuisine" class="mesActions.ModifierCuisine">
+            <result name="success">/WEB-INF/views/ModifierProduitOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="admin" class="mesActions.Admin">
+            <result>/WEB-INF/views/Admin.jsp</result>
+        </action>
+
+
+        <action name="deletechambre" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/DeleteNosProduits.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+
+        <action name="nosproduits" class="mesActions.AfficherProduits">
+            <result name="success">/WEB-INF/views/NosProduits.jsp</result>
+        </action>
+
+        <action name="monpanier" class="mesActions.MonPanier">
+            <result name="success">/WEB-INF/views/MonPanier.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+
+        <action name="supprimerproduitpanier" class="mesActions.SupprimerProduitPanier">
+            <result name="success">/WEB-INF/views/RemoveProductPanierOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="removeproduit" class="mesActions.RemoveProduit">
+            <result name="success">/WEB-INF/views/RemoveProductOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validerphoto" class="mesActions.ValiderPhoto">
+            <result>/WEB-INF/views/AddPhotoSucces.jsp</result>
+        </action>
+
+        <action name="plusdedetails" class="mesActions.PlusDeDetails">
+            <result name="success">/WEB-INF/views/DetailsProduit.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="ajouterphoto" class="mesActions.AddPhotoToProduct">
+            <result>/WEB-INF/views/FormImage.jsp</result>
+        </action>
+
+
+        <action name="prelistecuisine" class="mesActions.NosProduitsByCategoryToAddImage">
+            <result name="success">/WEB-INF/views/NosProduitsByCategoryToAddImage.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+
+        <action name="prelistechambre" class="mesActions.NosProduitsByCategoryToAddImage">
+            <result name="success">/WEB-INF/views/NosProduitsByCategoryToAddImage.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="prelistecommode" class="mesActions.NosProduitsByCategoryToAddImage">
+            <result name="success">/WEB-INF/views/NosProduitsByCategoryToAddImage.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="prelistechevet" class="mesActions.NosProduitsByCategoryToAddImage">
+            <result name="success">/WEB-INF/views/NosProduitsByCategoryToAddImage.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="prelistearmoire" class="mesActions.NosProduitsByCategoryToAddImage">
+            <result name="success">/WEB-INF/views/NosProduitsByCategoryToAddImage.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="prelistepouffe" class="mesActions.NosProduitsByCategoryToAddImage">
+            <result name="success">/WEB-INF/views/NosProduitsByCategoryToAddImage.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="prelistecoiffeuse" class="mesActions.NosProduitsByCategoryToAddImage">
+            <result name="success">/WEB-INF/views/NosProduitsByCategoryToAddImage.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="prelistemiroir" class="mesActions.NosProduitsByCategoryToAddImage">
+            <result name="success">/WEB-INF/views/NosProduitsByCategoryToAddImage.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="prelistelit" class="mesActions.NosProduitsByCategoryToAddImage">
+            <result name="success">/WEB-INF/views/NosProduitsByCategoryToAddImage.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="noscuisines" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+
+        </action>
+
+        <action name="noschambres" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="noslits" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="nosarmoires" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+
+        <action name="nosmiroirs" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="noschevets" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="noscoiffeuses" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="nospouffes" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="noscommodes" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="ajoutcomp" class="mesActions.AjoutComp">
+            <result>/WEB-INF/views/AjoutComp.jsp</result>
+        </action>
+
+        <action name="addlit" class="mesActions.AjoutProduct">
+            <result>/WEB-INF/views/FormLit.jsp</result>
+        </action>
+
+        <action name="addchevet" class="mesActions.AjoutProduct">
+            <result>/WEB-INF/views/FormChevet.jsp</result>
+        </action>
+
+        <action name="addcommode" class="mesActions.AjoutProduct">
+            <result>/WEB-INF/views/FormCommode.jsp</result>
+        </action>
+
+        <action name="addmiroir" class="mesActions.AjoutProduct">
+            <result>/WEB-INF/views/FormMiroir.jsp</result>
+        </action>
+
+        <action name="addcoiffeuse" class="mesActions.AjoutProduct">
+            <result>/WEB-INF/views/FormCoiffeuse.jsp</result>
+        </action>
+
+        <action name="addpouffe" class="mesActions.AjoutProduct">
+            <result>/WEB-INF/views/FormPouffe.jsp</result>
+        </action>
+
+        <action name="addarmoite" class="mesActions.AjoutProduct">
+            <result>/WEB-INF/views/FormArmoire.jsp</result>
+        </action>
+
+        <action name="ajouterpanier" class="mesActions.AjouterPanier">
+            <result name ="success">/WEB-INF/views/AjoutPanierOK.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="validerpanier" class="mesActions.ValiderPanier">
+            <result>/WEB-INF/views/ValiderPanierOK.jsp</result>
+        </action>
+
+        <action name="ajouterimage" class="mesActions.PreImage">
+            <result>/WEB-INF/views/PreImage.jsp</result>
+        </action>
+
+        <action name="productImage" class="mesActions.FileUploadAction">
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">3097152</param>
+
+                <param name="allowedTypes">
+                    image/png,image/gif,image/jpeg,image/pjpeg
+                </param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result>/WEB-INF/SuccessProductImage.jsp</result>
+
+        </action>
+
+    </package>
+
+    <!-- Add addition packages and configuration here. -->
+</struts>
