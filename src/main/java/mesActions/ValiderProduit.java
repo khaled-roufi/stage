@@ -133,6 +133,7 @@ public class ValiderProduit extends SuperAction implements ServletRequestAware {
             produit = new Pouffe();
         }
         try {
+            /* test */
             String filePath = servletRequest.getSession().getServletContext().getRealPath("/");
             System.out.println("Image Location:" + filePath);//see the server console for actual location
             File fileToCreate = new File(filePath, this.userImageFileName);
