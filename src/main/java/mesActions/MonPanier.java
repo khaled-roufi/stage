@@ -6,6 +6,7 @@ import modele.User;
 import org.apache.struts2.interceptor.SessionAware;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -32,7 +33,6 @@ public class MonPanier extends SuperAction implements SessionAware {
         return INPUT;
     }
 
-
     public Map<String, Object> getSession() {
         return session;
     }
@@ -45,8 +45,11 @@ public class MonPanier extends SuperAction implements SessionAware {
         this.panier = panier;
     }
 
-
     public void setSession(Map<String, Object> map) {
         this.session=map;
+    }
+
+    public Iterator getIterator(){
+        return panier.iterator();
     }
 }

@@ -26,12 +26,10 @@ public class SupprimerProduitPanier extends SuperAction implements SessionAware 
         for (Product produit : liste) {
 
             if (produit.getId() == getIdproduit()) {
-                if (produit.getQuantity() > 1) {
-                    produit.setQuantity(produit.getQuantity() - 1);
-                } else {
+
                     liste.remove(produit);
-                }
-                courant.getPanier().setPrice(courant.getPanier().getPrice() - produit.getPrice());
+
+                courant.getPanier().setPrice(courant.getPanier().getPrice() - (produit.getPrice()*produit.getQuantity()));
                 return SUCCESS;
             }
         }

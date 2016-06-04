@@ -39,6 +39,13 @@
         </s:url>
             <s:a href="%{link6}">Ajouter Une Image</s:a></li>
     </ul>
+
+    <ul>
+        <li><s:url action="supprimerimage.action" var="link7">
+        </s:url>
+            <s:a href="%{link7}">Supprimer Une Image</s:a></li>
+    </ul>
+
 </div>
 </body>
 </html>

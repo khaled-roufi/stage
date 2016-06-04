@@ -38,7 +38,7 @@ public class ModifierCuisine extends SuperAction {
 
     public String execute() throws Exception {
         Product cui = new Cuisine();
-
+        cui.setId(getIdproduit());
         cui.setReference(reference);
         cui.setPrice(Double.parseDouble(price));
         this.projectService.updateproduit(getIdproduit(), cui);

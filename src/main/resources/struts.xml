@@ -187,10 +187,17 @@
         </action>
 
         <action name="monpanier" class="mesActions.MonPanier">
-            <result name="success">/WEB-INF/views/MonPanier.jsp</result>
+            <result name="success">/WEB-INF/views/panier.jsp</result>
             <result name="input">/WEB-INF/views/Error.jsp</result>
         </action>
 
+        <action name="supprimerimage" class="mesActions.AfficherProduits">
+            <result>/WEB-INF/views/NosProduits.jsp</result>
+        </action>
+
+        <action name="supprimerimg" class="mesActions.SupprimerImage">
+            <result>/WEB-INF/views/DeleteImgOK.jsp</result>
+        </action>
 
         <action name="supprimerproduitpanier" class="mesActions.SupprimerProduitPanier">
             <result name="success">/WEB-INF/views/RemoveProductPanierOK.jsp</result>
@@ -208,6 +215,11 @@
 
         <action name="plusdedetails" class="mesActions.PlusDeDetails">
             <result name="success">/WEB-INF/views/DetailsProduit.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
+        <action name="listeimages" class="mesActions.PlusDeDetails">
+            <result name="success">/WEB-INF/views/ListeImages.jsp</result>
             <result name="input">/WEB-INF/views/Error.jsp</result>
         </action>
 
@@ -265,8 +277,13 @@
         <action name="noscuisines" class="mesActions.AfficherProduitsByCategory">
             <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>
             <result name="input">/WEB-INF/views/Error.jsp</result>
-
         </action>
+
+        <action name="noscuisinessuppimg" class="mesActions.AfficherProduitsByCategory">
+            <result name="success">/WEB-INF/views/NosProduitsByCategoryToSuppImg.jsp</result>
+            <result name="input">/WEB-INF/views/Error.jsp</result>
+        </action>
+
 
         <action name="noschambres" class="mesActions.AfficherProduitsByCategory">
             <result name="success">/WEB-INF/views/NosProduitsByCategory.jsp</result>

@@ -83,11 +83,12 @@ public class ProjectBdd implements ProjectService {
     }
 
     public void addnewphoto(Product p) {
-        String sql = "INSERT INTO `productimage` (`idproduit`,`nomimage`) VALUES (?,?)";
+        String sql = "INSERT INTO `productimage` (`idproduit`,`nomimage`,`imageprincipale`) VALUES (?,?,?)";
         try{
             PreparedStatement preparedStatement = dao.cn.prepareStatement(sql);
             preparedStatement.setInt(1, p.getId());
             preparedStatement.setString(2, p.getImages().get(0).getFile());
+            preparedStatement.setBoolean(3,p.getImages().get(0).isPrincipale());
             preparedStatement.execute();
 
         }catch (SQLException e){
@@ -97,7 +98,7 @@ public class ProjectBdd implements ProjectService {
 
     public void addProduit(Product produit) {
         if ((produit.getCategory() == "chambre") || (produit.getCategory() == "cuisine")) {
-            String sql = "INSERT INTO `product` (`reference`,`price`,`category`,`couleur`,`image`,`taille`) VALUES (?,?,?,?,?,?)";
+            String sql = "INSERT INTO `product` (`reference`,`price`,`category`,`image`) VALUES (?,?,?,?)";
             try {
 
                 PreparedStatement preparedStatement = dao.cn.prepareStatement(sql);
@@ -105,9 +106,7 @@ public class ProjectBdd implements ProjectService {
                 preparedStatement.setString(1, produit.getReference());
                 preparedStatement.setDouble(2, produit.getPrice());
                 preparedStatement.setString(3, produit.getCategory());
-                preparedStatement.setString(4, "");
-                preparedStatement.setString(5,produit.getImages().get(0).getFile());
-                preparedStatement.setDouble(6, 0);
+                preparedStatement.setString(4,produit.getImages().get(0).getFile());
 
 
 
@@ -155,7 +154,7 @@ public class ProjectBdd implements ProjectService {
     }
 
     public void updateproduit(int idproduit, Product produit) {
-        String sql = "UPDATE `product` SET reference = ? AND price = ? WHERE id = ?";
+        String sql = "UPDATE `product` SET reference = ?,  price = ? WHERE id = ?";
         try {
             PreparedStatement preparedStatement = dao.cn.prepareStatement(sql);
             preparedStatement.setString(1, produit.getReference());
@@ -310,12 +309,13 @@ public class ProjectBdd implements ProjectService {
         return result;
     }
 
-    public void addImageBDD(int MaxId, String NomImage) {
-        String sql = "INSERT INTO `productimage` (`idproduit`,`nomimage`) VALUES (?,?)";
+    public void addImageBDD(int MaxId, Image image) {
+        String sql = "INSERT INTO `productimage` (`idproduit`,`nomimage`,`imageprincipale`) VALUES (?,?,?)";
         try{
             PreparedStatement preparedStatement=dao.cn.prepareStatement(sql);
             preparedStatement.setInt(1,MaxId);
-            preparedStatement.setString(2,NomImage);
+            preparedStatement.setString(2,image.getFile());
+            preparedStatement.setBoolean(3,image.isPrincipale());
             preparedStatement.execute();
 
         }catch (SQLException e){

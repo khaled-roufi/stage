@@ -14,14 +14,14 @@ public interface ProjectService {
     void addnewphoto(Product produit);
     void addProduit(Product produit);
     void removeproduct(int idproduit);
-    void updateproduit(int idproduit,Product produit);
+    void updateproduit(int idproduit, Product produit);
     List<Product> getAllProduitByCategory(String categorie);
     List<Cuisine> getAllCuisines();
     void validerpanier(User u);
     void validercomposantscommande(User u);
     Product getProduitById(int id);
     int getIdCommande(Long iduser);
-    void addImageBDD(int MaxId,String NomImage );
+    void addImageBDD(int MaxId,Image image );
     void addComposantChambre(int MaxId,int idproduit);
     int getMaxIDProduct();
     List<Image> getListeImages(int idproduit);

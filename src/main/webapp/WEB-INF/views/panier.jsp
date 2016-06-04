@@ -75,6 +75,7 @@
         <div class="col-xs-12 col-sm-offset-1 col-sm-10 ">
         <table class="table table-striped table-condensed table-responsive" id="panierTable">
         <tbody>
+        <s:iterator value="panier">
         <tr>
         <td>
         <div class="col-md-11 col-xs-12">
@@ -83,9 +84,15 @@
         </td>
         <td>
         <div class="actionProduit">
+            <s:url action="supprimerproduitpanier" var="lien">
+                <s:param name = "idproduit"><s:property value="id"></s:property></s:param>
+            </s:url>
+            <s:a href="%{lien}">
+                <span class="glyphicon glyphicon-trash"></span>
+            </s:a>
 
-        <button type="submit" onclick="minus()"><span class="glyphicon glyphicon-trash"></span>
-        </button>
+       <!-- <button type="submit" onclick="minus()"><span class="glyphicon glyphicon-trash"></span>
+        </button>-->
         </div>
         </td>
         <td>
@@ -105,13 +112,14 @@
         </td>
         <td>
         <div class="quantiteProduit">
-        <input type="number" name="quantity" step="1" value="1" min="1" max="10" style="width: 29px;">
+        <input type="number" name="quantity" step="1" value="<s:property value="quantity"/>" min="1" max="10" style="width: 34px;">
+
         </div>
         </td>
         <td>
         <div class="blocInfo">
         <div class=" col-md-11 titreProduit">
-        <p>Lit en tissu - lit double 180x200 cm - beige - sommier inclus</p>
+        <p><s:property value="reference"/> </p>
         </div>
         <div class="col-md-10 descriptionProduit">
         <p>Ce superbe lit double au style intemporel s'intégrera aussi bien dans un intérieur
@@ -125,119 +133,11 @@
         </td>
         <td style="width: 21%;">
         <div class="prixProduit">
-        <p>350<span class="glyphicon glyphicon-euro"></span></p>
+        <p><s:property value="price"/><span class="glyphicon glyphicon-euro"></span></p>
         </div>
         </td>
         </tr>
-        <tr>
-        <td>
-        <div class="col-md-11 col-xs-12">
-        <img src="http://bulltyland.com/img/produit.jpg" alt="Image du produit" class="imgProduit">
-        </div>
-        </td>
-        <td>
-        <div class="actionProduit">
-
-        <button type="submit" onclick="minus()"><span class="glyphicon glyphicon-trash"></span>
-        </button>
-        </div>
-        </td>
-        <td>
-        <div class="quantiteProduitAcion">
-        <div class="row">
-        <div class="col-md-3 col-xs-12">
-        <button type="submit" onclick="minus()"><span
-        class="glyphicon glyphicon-minus-sign"></span></button>
-        </div>
-        <div class="col-md-3 col-xs-12">
-        <button type="submit" onclick="plus()"><span
-        class="glyphicon glyphicon-plus-sign"></span></button>
-        </div>
-        </div>
-
-        </div>
-        </td>
-        <td>
-        <div class="quantiteProduit">
-        <input type="number" name="quantity" step="1" value="1" min="1" max="10" style="width: 29px;">
-        </div>
-        </td>
-        <td>
-        <div class="blocInfo">
-        <div class=" col-md-11 titreProduit">
-        <p>Lit en tissu - lit double 180x200 cm - beige - sommier inclus</p>
-        </div>
-        <div class="col-md-10 descriptionProduit">
-        <p>Ce superbe lit double au style intemporel s'intégrera aussi bien dans un intérieur
-        moderne que dans un intérieur à la décoration plus classique
-        Grâce à la sobriété de son design, il apportera de l'élégance à votre chambre en
-        toute discrétion
-        Ce lit en version 180x200 cm es pieds en bois</p>
-        </div>
-        </div>
-
-        </td>
-        <td style="width: 21%;">
-        <div class="prixProduit">
-        <p>350<span class="glyphicon glyphicon-euro"></span></p>
-        </div>
-        </td>
-        </tr>
-        <tr>
-        <td>
-        <div class="col-md-11 col-xs-12">
-        <img src="http://bulltyland.com/img/produit.jpg" alt="Image du produit" class="imgProduit">
-        </div>
-        </td>
-        <td>
-        <div class="actionProduit">
-
-        <button type="submit" onclick="minus()"><span class="glyphicon glyphicon-trash"></span>
-        </button>
-        </div>
-        </td>
-        <td>
-        <div class="quantiteProduitAcion">
-        <div class="row">
-        <div class="col-md-3 col-xs-12">
-        <button type="submit" onclick="minus()"><span
-        class="glyphicon glyphicon-minus-sign"></span></button>
-        </div>
-        <div class="col-md-3 col-xs-12">
-        <button type="submit" onclick="plus()"><span
-        class="glyphicon glyphicon-plus-sign"></span></button>
-        </div>
-        </div>
-
-        </div>
-        </td>
-        <td>
-        <div class="quantiteProduit">
-        <input type="number" name="quantity" step="1" value="1" min="1" max="10" style="width: 29px;">
-        </div>
-        </td>
-        <td>
-        <div class="blocInfo">
-        <div class=" col-md-11 titreProduit">
-        <p>Lit en tissu - lit double 180x200 cm - beige - sommier inclus</p>
-        </div>
-        <div class="col-md-10 descriptionProduit">
-        <p>Ce superbe lit double au style intemporel s'intégrera aussi bien dans un intérieur
-        moderne que dans un intérieur à la décoration plus classique
-        Grâce à la sobriété de son design, il apportera de l'élégance à votre chambre en
-        toute discrétion
-        Ce lit en version 180x200 cm es pieds en bois</p>
-        </div>
-        </div>
-
-        </td>
-        <td style="width: 21%;">
-        <div class="prixProduit">
-        <p>350<span class="glyphicon glyphicon-euro"></span></p>
-        </div>
-        </td>
-        </tr>
-
+        </s:iterator>
 
         <tr>
         <td></td>
@@ -249,7 +149,7 @@
         </td>
         <td style="width: 21%;" class="total">
         <div class="prixProduit">
-        <p>1050<span class="glyphicon glyphicon-euro"></span></p>
+        <p><s:property value="courant.panier.price"></s:property><span class="glyphicon glyphicon-euro"></span></p>
         </div>
         </td>
         </tr>

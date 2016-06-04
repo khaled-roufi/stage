@@ -2,6 +2,7 @@ package mesActions;
 
 import modele.Image;
 import modele.Product;
+import org.apache.commons.io.FileUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
 import javax.servlet.http.HttpServletRequest;
@@ -59,8 +60,13 @@ public class ValiderPhoto extends SuperAction implements ServletRequestAware{
     }
 
     public String execute() throws Exception{
+        String filePath = servletRequest.getSession().getServletContext().getRealPath("/");
+        File fileToCreate = new File(filePath, this.userImageFileName);
+        FileUtils.copyFile(this.userImage, fileToCreate);//copying image in the new file
+
         Product p = this.projectService.getProduitById(getIdproduit());
-        p.getImages().add(new Image(userImageFileName));
+        Image img = new Image(userImageFileName,false);
+        p.getImages().add(img);
         this.projectService.addnewphoto(p);
         return SUCCESS;
     }

@@ -92,14 +92,14 @@ public class ValiderCuisine extends SuperAction implements ServletRequestAware {
             cui.setPrice(getPrice());
             cui.setReference(reference);
             cui.setCategory("cuisine");
-            Image image = new Image(userImageFileName);
+            Image image = new Image(userImageFileName,true);
             cui.getImages().add(new Image(userImageFileName));
             System.out.println(image.getId());
             System.out.println(image.getFile());
             if ((cui.getPrice()!=0)&&(!cui.getReference().equals(""))&&(!cui.getCategory().equals(""))) {
                 this.projectService.addProduit(cui);
                 System.out.println("Le max : "+this.projectService.getMaxIDProduct());
-                this.projectService.addImageBDD(this.projectService.getMaxIDProduct(),image.getFile());
+                this.projectService.addImageBDD(this.projectService.getMaxIDProduct(),image);
                 return SUCCESS;
             }
             return INPUT;
